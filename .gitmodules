@@ -4,3 +4,6 @@
 [submodule "bundle/auto-pairs"]
 	path = bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "bundle/indentLine"]
+	path = bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine.git

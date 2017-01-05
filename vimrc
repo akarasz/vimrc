@@ -17,3 +17,7 @@ set smarttab
 set expandtab
 
 set nobackup
+
+" line indentation
+let g:indentLine_enabled = 0
+nnoremap <F3> :LeadingSpaceToggle<CR>:IndentLinesToggle<CR>:echo "Line indent visualization toggled"<CR>

@@ -1,3 +1,6 @@
+" vim:fdm=marker
+
+" Settings {{{
 execute pathogen#infect()
 
 set nocompatible
@@ -18,13 +21,21 @@ set expandtab
 
 set nobackup
 
-" line indentation
-let g:indentLine_enabled = 0
-nnoremap <F3> :LeadingSpaceToggle<CR>:IndentLinesToggle<CR>:echo "Line indent visualization toggled"<CR>
+" }}}
+" Keyboard mappings {{{
 
 " switch between tabs
 nnoremap H gT
 nnoremap L gt
 
+" }}}
+" Plugins {{{
+
+" line indentation
+let g:indentLine_enabled = 0
+nnoremap <F3> :LeadingSpaceToggle<CR>:IndentLinesToggle<CR>:echo "Line indent visualization toggled"<CR>
+
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
+
+" }}}

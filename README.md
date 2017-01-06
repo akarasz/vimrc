@@ -1,22 +1,7 @@
 Install
 =======
 
-(
 ```
-git clone git@bitbucket.org:akarasz/vimrc.git ~/.vim
-```
-
-OR
-
-```
-git clone https://bitbucket.org/akarasz/vimrc.git ~/.vim
-```
-)
-
-THEN
-
-```
-cd ~/.vim
-git submodule init
-git submodule update
+git clone git@github.com:akarasz/vimrc.git ~/.vim
+pushd .; cd ~/.vim; git submodule update --init --recursive; popd
 ```

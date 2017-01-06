@@ -25,3 +25,6 @@ nnoremap <F3> :LeadingSpaceToggle<CR>:IndentLinesToggle<CR>:echo "Line indent vi
 " switch between tabs
 nnoremap H gT
 nnoremap L gt
+
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>

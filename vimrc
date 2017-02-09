@@ -7,6 +7,7 @@ set nocompatible
 set backspace=indent,eol,start
 
 syntax on
+color dracula
 set hlsearch
 
 set autoindent

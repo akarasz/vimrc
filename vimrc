@@ -8,6 +8,7 @@ set backspace=indent,eol,start
 
 syntax on
 color diokai
+set number
 set hlsearch
 
 set autoindent

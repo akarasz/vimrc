@@ -16,3 +16,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/pgsql.vim"]
+	path = bundle/pgsql.vim
+	url = https://github.com/exu/pgsql.vim

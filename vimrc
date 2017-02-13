@@ -26,15 +26,9 @@ set nobackup
 " }}}
 " Keyboard mappings {{{
 
-" switch between panes
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
-
-" switch between tabs
-nnoremap H gT
-nnoremap L gt
+" switch between buffers
+nnoremap <C-h> :bprev<CR>
+nnoremap <C-l> :bnext<CR>
 
 " }}}
 " Plugins {{{

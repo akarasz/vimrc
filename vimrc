@@ -39,6 +39,9 @@ nnoremap L gt
 " }}}
 " Plugins {{{
 
+" rooter
+let g:rooter_change_directory_for_non_project_files = 'current'
+
 " line indentation
 let g:indentLine_enabled = 0
 nnoremap <F3> :LeadingSpaceToggle<CR>:IndentLinesToggle<CR>:echo "Line indent visualization toggled"<CR>

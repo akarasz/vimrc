@@ -1,3 +1,5 @@
+/build/
+
 # eclim install files
-/eclim
+/eclim/
 /plugin/eclim.vim

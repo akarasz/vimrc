@@ -43,4 +43,7 @@ nnoremap <F3> :LeadingSpaceToggle<CR>:IndentLinesToggle<CR>:echo "Line indent vi
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
+" eclim
+let g:EclimCompletionMethod = 'omnifunc'
+
 " }}}

@@ -46,4 +46,7 @@ map <C-n> :NERDTreeToggle<CR>
 " eclim
 let g:EclimCompletionMethod = 'omnifunc'
 
+" YouCompleteMe
+set completeopt-=preview
+
 " }}}

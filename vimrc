@@ -46,6 +46,9 @@ map <C-n> :NERDTreeToggle<CR>
 " eclim
 let g:EclimCompletionMethod = 'omnifunc'
 
+" javacomplete2
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 " YouCompleteMe
 set completeopt-=preview
 

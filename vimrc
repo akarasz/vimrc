@@ -23,6 +23,8 @@ set expandtab
 
 set nobackup
 
+set mouse=a
+
 " }}}
 " Keyboard mappings {{{
 

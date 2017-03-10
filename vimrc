@@ -55,7 +55,7 @@ nnoremap <C-J> i<CR><Esc>
 " Plugins {{{
 
 " rooter
-let g:rooter_change_directory_for_non_project_files = 'current'
+" let g:rooter_change_directory_for_non_project_files = 'current' 
 
 " line indentation
 let g:indentLine_enabled = 0
@@ -64,13 +64,45 @@ nnoremap <F3> :LeadingSpaceToggle<CR>:IndentLinesToggle<CR>:echo "Line indent vi
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
+let NERDTreeQuitOnOpen = 1
+
 " eclim
 let g:EclimCompletionMethod = 'omnifunc'
 
-" javacomplete2
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
 " YouCompleteMe
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+
 set completeopt-=preview
+
+" }}}
+" Status bar {{{
+
+set noruler
+set laststatus=2
+
+hi statusline ctermfg=15
+
+" Formats the statusline
+set statusline=%f " file name
+set statusline+=\ %y "filetype
+set statusline+=\ %h "help file flag
+set statusline+=%m "modified flag
+set statusline+=%r "read only flag]
+
+set statusline+=\ %= " align left
+set statusline+=Line:\ %l/%L\ (%p%%)\  " line X of Y [percent of file]
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+
+" set background to red in case of read only file
+function CheckRo()
+    if &readonly
+        hi statusline ctermbg=24
+    else
+        hi statusline ctermbg=237
+    endif
+endfunction
+
+au BufReadPost * call CheckRo()
 
 " }}}

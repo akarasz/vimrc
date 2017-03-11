@@ -80,29 +80,18 @@ set completeopt-=preview
 set noruler
 set laststatus=2
 
-hi statusline ctermfg=15
+" statusline highlight plugin does the coloring
+highlight def StatusLineReadonly ctermbg=88
+highlight def StatusLineModified ctermbg=62
 
 " Formats the statusline
 set statusline=%f " file name
 set statusline+=\ %y "filetype
 set statusline+=\ %h "help file flag
-set statusline+=%m "modified flag
-set statusline+=%r "read only flag]
 
 set statusline+=\ %= " align left
 set statusline+=Line:\ %l/%L\ (%p%%)\  " line X of Y [percent of file]
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
-
-" set background to red in case of read only file
-function CheckRo()
-    if &readonly
-        hi statusline ctermbg=24
-    else
-        hi statusline ctermbg=237
-    endif
-endfunction
-
-au BufReadPost * call CheckRo()
 
 " }}}

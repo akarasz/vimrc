@@ -31,3 +31,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/StatusLineHighlight"]
+	path = bundle/StatusLineHighlight
+	url = https://github.com/vim-scripts/StatusLineHighlight.git

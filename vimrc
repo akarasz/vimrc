@@ -54,6 +54,12 @@ imap <Esc>OS -
 nnoremap <C-J> i<CR><Esc>
 
 " }}}
+" Autocmd {{{
+
+" remove trailing white spaces on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" }}}
 " Plugins {{{
 
 " rooter

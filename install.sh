@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEDIR=$(dirname $(realpath install.sh))
+BASEDIR=$(dirname $(realpath $0))
 
 yesno() {
     local message="$1"

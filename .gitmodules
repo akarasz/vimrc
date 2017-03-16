@@ -40,3 +40,6 @@
 [submodule "bundle/pathogen"]
 	path = bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "bundle/colors-diokai"]
+	path = bundle/colors-diokai
+	url = https://github.com/ltlollo/diokai.git

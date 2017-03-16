@@ -30,7 +30,7 @@ install_eclim() {
     local ECLIM_URL="https://github.com/ervandew/eclim/releases/download/$ECLIM_VERSION/$ECLIM_JAR"
     local ECLIPSE_HOME=${ECLIPSE_HOME:-$HOME/eclipse}
 
-    if [ -d $ECLIPSE_HOME ]; then
+    if [ ! -d $ECLIPSE_HOME ]; then
         echo "eclipse has to be installed (and set $ECLIPSE_HOME)"
         return 1
     fi

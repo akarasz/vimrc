@@ -1,6 +1,7 @@
 " vim:fdm=marker
 
 " Settings {{{
+runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 set nocompatible
@@ -51,6 +52,7 @@ imap <Esc>OS -
 
 " insert newline in normal mode
 nnoremap <C-J> i<CR><Esc>
+
 " }}}
 " Plugins {{{
 

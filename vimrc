@@ -15,6 +15,8 @@ set hlsearch
 set autoindent
 filetype plugin indent on
 
+set nowrap
+
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -29,9 +31,14 @@ set mouse=a
 " }}}
 " Keyboard mappings {{{
 
-" switch between buffers
-nnoremap <C-h> :bprev<CR>
-nnoremap <C-l> :bnext<CR>
+" leader
+let mapleader = ','
+
+" paste mode
+set pastetoggle=<F2>
+
+" remove search highlights
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " putty numpad fuckup fix
 imap <Esc>Oq 1
@@ -53,6 +60,13 @@ imap <Esc>OS -
 " insert newline in normal mode
 nnoremap <C-J> i<CR><Esc>
 
+" save with sudo
+cmap w!! w !sudo tee % >/dev/null
+
+" ultisnips
+let g:UltiSnipsJumpForwardTrigger = "<cr>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-cr>"
+
 " }}}
 " Autocmd {{{
 
@@ -63,7 +77,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " Plugins {{{
 
 " rooter
-" let g:rooter_change_directory_for_non_project_files = 'current' 
+" let g:rooter_change_directory_for_non_project_files = 'current'
 
 " line indentation
 let g:indentLine_enabled = 0
@@ -82,6 +96,9 @@ let g:ycm_server_python_interpreter = '/usr/bin/python'
 
 set completeopt-=preview
 
+" supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " }}}
 " Status bar {{{
 
@@ -90,7 +107,9 @@ set laststatus=2
 
 " statusline highlight plugin does the coloring
 highlight def StatusLineReadonly ctermbg=88
+highlight def StatusLineReadonlyNC ctermbg=88
 highlight def StatusLineModified ctermbg=62
+highlight def StatusLineModifiedNC ctermbg=62
 
 " Formats the statusline
 set statusline=%f " file name

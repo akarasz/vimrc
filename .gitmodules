@@ -31,3 +31,9 @@
 [submodule "bundle/colors-diokai"]
 	path = bundle/colors-diokai
 	url = https://github.com/ltlollo/diokai.git
+[submodule "bundle/xml"]
+	path = bundle/xml
+	url = https://github.com/othree/xml.vim.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab

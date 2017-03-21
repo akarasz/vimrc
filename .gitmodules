@@ -37,3 +37,9 @@
 [submodule "ide-tools/nerdtree"]
 	path = ide-tools/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/xml"]
+	path = bundle/xml
+	url = https://github.com/othree/xml.vim.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git

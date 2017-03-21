@@ -31,9 +31,9 @@
 [submodule "bundle/colors-diokai"]
 	path = bundle/colors-diokai
 	url = https://github.com/ltlollo/diokai.git
-[submodule "bundle/xml"]
-	path = bundle/xml
-	url = https://github.com/othree/xml.vim.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = https://github.com/ervandew/supertab
+[submodule "ide-tools/youcompleteme"]
+	path = ide-tools/youcompleteme
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "ide-tools/nerdtree"]
+	path = ide-tools/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

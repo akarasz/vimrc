@@ -9,11 +9,11 @@ snippet t "Simple tag" b
 endsnippet
 
 snippet ti "Inline tag" b
-<${1:tag}>${0}</${1/([\w:._-]+).*/$1/}>
+<${1:tag}>${2}</${1/([\w:._-]+).*/$1/}>${0}
 endsnippet
 
 snippet ts
-<${0:content} />
+<${1:content} />${0}
 endsnippet
 
 snippet axl

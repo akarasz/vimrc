@@ -99,6 +99,12 @@ set completeopt-=preview
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+" utlisnips
+let g:UltiSnipsSnippetDirectories = ["snips"]
+
+" skeletons
+let skeletons#autoRegister = 1
+
 " }}}
 " Status bar {{{
 

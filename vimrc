@@ -9,7 +9,9 @@ set backspace=indent,eol,start
 
 syntax on
 color diokai
+set cursorline
 set number
+set relativenumber
 set hlsearch
 
 set autoindent
@@ -72,6 +74,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-cr>"
 
 " remove trailing white spaces on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" toggle views
+nmap <silent> <leader>sn :set relativenumber!<CR>:set number!<CR>
+nmap <silent> <leader>sl :set cursorline!<CR>
 
 " }}}
 " Plugins {{{

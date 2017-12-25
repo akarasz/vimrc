@@ -3,6 +3,7 @@
 " Settings {{{
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+"execute pathogen#infect('ide-tools/{}')
 
 set nocompatible
 set backspace=indent,eol,start
@@ -62,8 +63,8 @@ imap <Esc>OS -
 " insert newline in normal mode
 nnoremap <C-J> i<CR><Esc>
 
-" save with sudo
-cmap w!! w !sudo tee % >/dev/null
+" execute default macro in normal mode for space
+nnoremap <Space> @q
 
 " ultisnips
 let g:UltiSnipsJumpForwardTrigger = "<cr>"
@@ -78,6 +79,9 @@ autocmd BufWritePre * %s/\s\+$//e
 " toggle views
 nmap <silent> <leader>sn :set relativenumber!<CR>:set number!<CR>
 nmap <silent> <leader>sl :set cursorline!<CR>
+
+" javacomplete2
+"autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " }}}
 " Plugins {{{

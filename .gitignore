@@ -1,4 +1,5 @@
 /build/
+/.netrwhist
 
 # eclim install files
 /eclim/

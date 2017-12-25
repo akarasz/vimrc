@@ -19,7 +19,7 @@ install_youcompleteme() {
     mkdir -p $YCM_BUILD
     cd $YCM_BUILD
 
-    cmake -G "Unix Makefiles" . $BASEDIR/ide-tools/YouCompleteMe/third_party/ycmd/cpp
+    cmake -G "Unix Makefiles" . $BASEDIR/ide-tools/youcompleteme/third_party/ycmd/cpp
     cmake --build . --target ycm_core
 }
 

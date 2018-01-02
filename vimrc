@@ -31,6 +31,11 @@ set nobackup
 
 set mouse=a
 
+set listchars=tab:>·,trail:·,extends:>,precedes:<,space:·
+set list
+
+set updatetime=250
+
 " }}}
 " Keyboard mappings {{{
 
@@ -74,7 +79,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-cr>"
 " Autocmd {{{
 
 " remove trailing white spaces on save
-autocmd BufWritePre * %s/\s\+$//e
+au BufWritePre * %s/\s\+$//e
 
 " toggle views
 nmap <silent> <leader>sn :set relativenumber!<CR>:set number!<CR>
@@ -89,17 +94,15 @@ nmap <silent> <leader>sl :set cursorline!<CR>
 " rooter
 " let g:rooter_change_directory_for_non_project_files = 'current'
 
-" line indentation
-let g:indentLine_enabled = 0
-nnoremap <F3> :LeadingSpaceToggle<CR>:IndentLinesToggle<CR>:echo "Line indent visualization toggled"<CR>
-
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
 let NERDTreeQuitOnOpen = 1
 
-" eclim
-let g:EclimCompletionMethod = 'omnifunc'
+" ctrlP
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " YouCompleteMe
 let g:ycm_server_python_interpreter = '/usr/bin/python'

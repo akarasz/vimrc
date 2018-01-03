@@ -3,7 +3,7 @@
 " Settings {{{
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-"execute pathogen#infect('ide-tools/{}')
+execute pathogen#infect('ide-tools/{}')
 
 set nocompatible
 set backspace=indent,eol,start
@@ -111,6 +111,13 @@ set completeopt-=preview
 
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" syntastic
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " utlisnips
 let g:UltiSnipsSnippetDirectories = ["snips"]

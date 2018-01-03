@@ -67,3 +67,6 @@
 [submodule "bundle/simpylfold"]
 	path = bundle/simpylfold
 	url = https://github.com/tmhedberg/SimpylFold
+[submodule "ide-tools/syntastic"]
+	path = ide-tools/syntastic
+	url = https://github.com/vim-syntastic/syntastic

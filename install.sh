@@ -46,7 +46,7 @@ echo "initialize bundles..."
 cd $BASEDIR
 git submodule update --init --recursive
 
-yesno "Do you want to install YouCompleteMe" && install_youcompleteme
+#yesno "Do you want to install YouCompleteMe" && install_youcompleteme
 #yesno "Do you want to install eclim" && install_eclim
 
 echo "done."

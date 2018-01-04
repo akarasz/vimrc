@@ -31,9 +31,6 @@
 [submodule "bundle/colors-diokai"]
 	path = bundle/colors-diokai
 	url = https://github.com/ltlollo/diokai.git
-[submodule "ide-tools/youcompleteme"]
-	path = ide-tools/youcompleteme
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "ide-tools/nerdtree"]
 	path = ide-tools/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -70,3 +67,6 @@
 [submodule "ide-tools/syntastic"]
 	path = ide-tools/syntastic
 	url = https://github.com/vim-syntastic/syntastic
+[submodule "ide-tools/jedi-vim"]
+	path = ide-tools/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim

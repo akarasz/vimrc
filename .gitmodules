@@ -40,9 +40,6 @@
 [submodule "bundle/xml"]
 	path = bundle/xml
 	url = https://github.com/othree/xml.vim.git
-[submodule "ide-tools/supertab"]
-	path = ide-tools/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
@@ -70,3 +67,15 @@
 [submodule "ide-tools/jedi-vim"]
 	path = ide-tools/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim
+[submodule "bundle/virtualenv"]
+	path = bundle/virtualenv
+	url = https://github.com/jmcantrell/vim-virtualenv
+[submodule "bundle/javacomplete2"]
+	path = bundle/javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic
+[submodule "bundle/completor"]
+	path = bundle/completor
+	url = https://github.com/maralla/completor.vim

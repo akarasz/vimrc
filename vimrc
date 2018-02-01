@@ -3,7 +3,6 @@
 " Settings {{{
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-execute pathogen#infect('ide-tools/{}')
 
 set nocompatible
 set backspace=indent,eol,start
@@ -85,14 +84,18 @@ au BufWritePre * %s/\s\+$//e
 nmap <silent> <leader>sn :set relativenumber!<CR>:set number!<CR>
 nmap <silent> <leader>sl :set cursorline!<CR>
 
-" javacomplete2
-"autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
 " }}}
 " Plugins {{{
 
 " rooter
 " let g:rooter_change_directory_for_non_project_files = 'current'
+
+" completer
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+
+let g:completor_debug = 1
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -100,20 +103,10 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " ctrlP
-
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" YouCompleteMe
-let g:ycm_server_python_interpreter = '/usr/bin/python'
-
-set completeopt-=preview
-
-" supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " syntastic
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1

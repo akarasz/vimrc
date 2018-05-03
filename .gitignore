@@ -2,5 +2,5 @@
 /.netrwhist
 
 # eclim install files
-/eclim/
+/bundle/eclim
 /plugin/eclim.vim

@@ -79,3 +79,9 @@
 [submodule "bundle/completor"]
 	path = bundle/completor
 	url = https://github.com/maralla/completor.vim
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "bundle/mib"]
+	path = bundle/mib
+	url = https://github.com/sedan07/vim-mib.git

@@ -1,5 +1,5 @@
 snippet class
-`!p 
+`!p
 import re
 
 splitted = path.split('/')
@@ -17,4 +17,16 @@ ${1:public} ${2:class} `!v expand('%:t:r')` {
 
 }
 
+endsnippet
+
+snippet def
+${1:public} ${2:void} ${3:myFunction}(${4:params}) {
+	${0:throw new UnsupportedOperationException;}
+}
+endsnippet
+
+snippet if
+if (${1:expr}) {
+	${0:// TODO}
+}
 endsnippet

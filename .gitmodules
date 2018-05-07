@@ -85,3 +85,12 @@
 [submodule "bundle/mib"]
 	path = bundle/mib
 	url = https://github.com/sedan07/vim-mib.git
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "bundle/jsx"]
+	path = bundle/jsx
+	url = https://github.com/mxw/vim-jsx
+[submodule "bundle/csscomplete"]
+	path = bundle/csscomplete
+	url = https://github.com/othree/csscomplete.vim

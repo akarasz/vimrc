@@ -73,9 +73,6 @@
 [submodule "bundle/javacomplete2"]
 	path = bundle/javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
 [submodule "bundle/completor"]
 	path = bundle/completor
 	url = https://github.com/maralla/completor.vim
@@ -94,3 +91,6 @@
 [submodule "bundle/csscomplete"]
 	path = bundle/csscomplete
 	url = https://github.com/othree/csscomplete.vim
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git

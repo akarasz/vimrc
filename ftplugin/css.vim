@@ -6,4 +6,4 @@ set autoindent
 
 " autocompletion
 setlocal omnifunc=csscomplete#CompleteCSS noci
-let g:completor_css_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
+let g:completor_css_omni_trigger = '^\s+([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'

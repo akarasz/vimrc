@@ -70,10 +70,6 @@ nnoremap <C-J> i<CR><Esc>
 " execute default macro in normal mode for space
 nnoremap <Space> @q
 
-" ultisnips
-let g:UltiSnipsJumpForwardTrigger = "<cr>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-cr>"
-
 " }}}
 " Autocmd {{{
 
@@ -94,17 +90,19 @@ nmap <silent> <leader>sl :set cursorline!<CR>
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-
-let g:completor_debug = 1
-
-" nerdtree
-map <C-n> :NERDTreeToggle<CR>
-
-let NERDTreeQuitOnOpen = 1
+let g:completor_debug = 0
+let g:completor_complete_options = "menuone,select,preview"
 
 " ctrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" skeletons
+let skeletons#autoRegister = 1
+
+" supertab
+let g:SuperTabMappingForward = '<s-tab>'
+let g:SuperTabMappingBackward = '<tab>'
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -114,9 +112,8 @@ let g:syntastic_check_on_wq = 0
 
 " utlisnips
 let g:UltiSnipsSnippetDirectories = ["snips"]
-
-" skeletons
-let skeletons#autoRegister = 1
+let g:UltiSnipsJumpForwardTrigger = "<cr>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-cr>"
 
 " }}}
 " Status bar {{{

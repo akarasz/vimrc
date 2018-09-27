@@ -10,4 +10,4 @@ set fileformat=unix
 set foldmethod=indent
 set foldlevel=1
 
-let g:syntastic_python_checkers = ['python', 'pycodestyle']
+let b:ale_linters = ['pycodestyle']

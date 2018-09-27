@@ -73,9 +73,6 @@
 [submodule "bundle/javacomplete2"]
 	path = bundle/javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
 [submodule "bundle/completor"]
 	path = bundle/completor
 	url = https://github.com/maralla/completor.vim
@@ -88,3 +85,15 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "bundle/jsx"]
+	path = bundle/jsx
+	url = https://github.com/mxw/vim-jsx
+[submodule "bundle/csscomplete"]
+	path = bundle/csscomplete
+	url = https://github.com/othree/csscomplete.vim
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git

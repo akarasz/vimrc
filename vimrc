@@ -8,7 +8,8 @@ set nocompatible
 set backspace=indent,eol,start
 
 syntax on
-color diokai
+set background=dark
+color solarized
 set cursorline
 set number
 set relativenumber

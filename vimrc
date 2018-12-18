@@ -9,7 +9,7 @@ set backspace=indent,eol,start
 
 syntax on
 set background=dark
-color solarized
+color diokai
 set cursorline
 set number
 set relativenumber
@@ -92,7 +92,9 @@ nmap <silent> <leader>sl :set cursorline!<CR>
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 let g:completor_debug = 0
-let g:completor_complete_options = "menuone,select,preview"
+let g:completor_complete_options = "menuone,noselect,preview"
+let g:completor_auto_trigger = 0
+
 
 " ctrlP
 let g:ctrlp_map = '<c-p>'

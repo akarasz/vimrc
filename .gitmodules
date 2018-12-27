@@ -70,9 +70,6 @@
 [submodule "bundle/virtualenv"]
 	path = bundle/virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv
-[submodule "bundle/javacomplete2"]
-	path = bundle/javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2
 [submodule "bundle/completor"]
 	path = bundle/completor
 	url = https://github.com/maralla/completor.vim
@@ -94,9 +91,6 @@
 [submodule "bundle/csscomplete"]
 	path = bundle/csscomplete
 	url = https://github.com/othree/csscomplete.vim
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/w0rp/ale.git
 [submodule "bundle/colors-solarized"]
 	path = bundle/colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized

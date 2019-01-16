@@ -1,0 +1,23 @@
+snippet if
+if ${1:expr} {
+	${0}
+}
+endsnippet
+
+snippet for
+for ${1:expr} {
+	${0}
+}
+endsnippet
+
+snippet fori
+for ${1:i} := ${2:0}; i < ${3:val}; i++ {
+	${0}
+}
+endsnippet
+
+snippet forr
+for ${1:_, vv} := range ${2:v} {
+	${0}
+}
+endsnippet

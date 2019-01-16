@@ -2,6 +2,5 @@ Install
 =======
 
 ```
-git clone git@github.com:akarasz/vimrc.git ~/.vim
-~/.vim/install.sh
+git clone git@github.com:akarasz/vimrc.git ~/.config/nvim
 ```

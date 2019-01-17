@@ -11,17 +11,6 @@ endif
 " Plugins {{{
 call plug#begin(s:basedir . 'plugged')
 
-Plug 'roxma/nvim-yarp'
-
-Plug 'ncm2/ncm2'
-set completeopt=noinsert,menuone,noselect
-set shortmess+=c
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-Plug 'ncm2/ncm2-go', { 'for': 'go' }
-
 Plug 'itchyny/lightline.vim'
 set noshowmode
 
@@ -61,16 +50,16 @@ Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+Plug 'ncm2/ncm2-ultisnips'
+inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsSnippetDirectories = ["snips"]
 
-let g:UltiSnipsExpandTrigger		= "<c-e>"
+let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
 let g:UltiSnipsJumpForwardTrigger	= "<tab>"
 let g:UltiSnipsJumpBackwardTrigger	= "<s-tab>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
-
-Plug 'ncm2/ncm2-ultisnips'
-noremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
 Plug 'airblade/vim-gitgutter'
 
@@ -83,8 +72,17 @@ Plug 'ltlollo/diokai'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 let g:go_fmt_autosave = 0
 
-call plug#end()
+Plug 'roxma/nvim-yarp'
 
+Plug 'ncm2/ncm2'
+set completeopt=noinsert,menuone,noselect
+set shortmess+=c
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+Plug 'ncm2/ncm2-go', { 'for': 'go' }
+
+call plug#end()
 
 " }}}
 " Settings {{{

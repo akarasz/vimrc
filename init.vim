@@ -48,7 +48,8 @@ nnoremap <F3> :NERDTreeToggle<CR>
 
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_match_current_file = 1
 
 Plug 'ncm2/ncm2-ultisnips'
 inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
@@ -57,8 +58,8 @@ Plug 'SirVer/ultisnips'
 let g:UltiSnipsSnippetDirectories = ["snips"]
 
 let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
-let g:UltiSnipsJumpForwardTrigger	= "<tab>"
-let g:UltiSnipsJumpBackwardTrigger	= "<s-tab>"
+let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
 Plug 'airblade/vim-gitgutter'

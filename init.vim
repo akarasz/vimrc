@@ -35,7 +35,7 @@ let g:lightline = {
 Plug 'w0rp/ale'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_open_list = 1
+let g:ale_open_list = 0
 
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
@@ -50,17 +50,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_match_current_file = 1
-
-Plug 'ncm2/ncm2-ultisnips'
-inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
-
-Plug 'SirVer/ultisnips'
-let g:UltiSnipsSnippetDirectories = ["snips"]
-
-let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
-let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
-let g:UltiSnipsRemoveSelectModeMappings = 0
 
 Plug 'airblade/vim-gitgutter'
 
@@ -78,10 +67,67 @@ Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
 set completeopt=noinsert,menuone,noselect
 set shortmess+=c
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+Plug 'Shougo/neosnippet.vim'
+let g:neosnippet#disable_runtime_snippets = {
+    \ '_': 1,
+    \ }
+
+inoremap <expr> <cr> HandleCrI()
+inoremap <expr> <tab> HandleTabI()
+imap <expr> <s-tab> HandleSTabI()
+smap <expr> <tab> HandleTabS()
+
+function! HandleCrI()
+    if pumvisible()
+        if empty(v:completed_item)
+            return "\<c-e>"
+        endif
+    endif
+
+    return ncm2_neosnippet#expand_or("\<cr>", 'n')
+endfunction
+
+function! HandleTabI()
+    if pumvisible()
+        return "\<c-n>"
+    else
+        if neosnippet#expandable_or_jumpable()
+            return "\<Plug>(neosnippet_expand_or_jump)"
+        else
+            return "\<tab>"
+        endif
+    endif
+endfunction
+
+function! HandleSTabI()
+    if pumvisible()
+        return "\<c-p>"
+    else
+        return "\<s-tab>"
+    endif
+endfunction
+
+function! HandleTabS()
+    if neosnippet#expandable_or_jumpable()
+        return "\<Plug>(neosnippet_expand_or_jump)"
+    else
+        return "\<tab>"
+    endif
+endfunction
+
+Plug 'ncm2/ncm2-neosnippet'
 
 Plug 'ncm2/ncm2-go', { 'for': 'go' }
+
+Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
+
+Plug 'natebosch/vim-lsc'
+set shortmess-=F
+let g:lsc_server_commands = {
+    \ 'java': '/home/andris/tools/java-language-server/dist/mac/bin/launcher --quiet'
+\ }
+let g:lsc_auto_map = v:true
 
 call plug#end()
 
@@ -108,6 +154,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+set colorcolumn=100
+
 set smarttab
 set expandtab
 
@@ -122,6 +170,8 @@ set updatetime=250
 
 set splitright
 set splitbelow
+
+set scrolloff=5
 
 " }}}
 " Mappings {{{
@@ -145,6 +195,9 @@ nnoremap <silent> <leader>nh :set nonumber<cr>:set norelativenumber<cr>
 nnoremap <silent> <leader>ve :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>vr :source $MYVIMRC<cr>:echo "config reloaded."<cr>
 
+" toggle list
+nnoremap <leader>l :set list!<cr>
+
 " only temporary...
 inoremap <up> <nop>
 inoremap <down> <nop>
@@ -164,27 +217,30 @@ vnoremap <pageup> <nop>
 vnoremap <pagedown> <nop>
 
 " putty numpad fuckup fix
-inoremap <Esc>Oq 1
-inoremap <Esc>Or 2
-inoremap <Esc>Os 3
-inoremap <Esc>Ot 4
-inoremap <Esc>Ou 5
-inoremap <Esc>Ov 6
-inoremap <Esc>Ow 7
-inoremap <Esc>Ox 8
-inoremap <Esc>Oy 9
-inoremap <Esc>Op 0
-inoremap <Esc>On .
-inoremap <Esc>OR *
-inoremap <Esc>OQ /
-inoremap <Esc>Ol +
-inoremap <Esc>OS -
+inoremap <esc>Oq 1
+inoremap <esc>Or 2
+inoremap <esc>Os 3
+inoremap <esc>Ot 4
+inoremap <esc>Ou 5
+inoremap <esc>Ov 6
+inoremap <esc>Ow 7
+inoremap <esc>Ox 8
+inoremap <esc>Oy 9
+inoremap <esc>Op 0
+inoremap <esc>On .
+inoremap <esc>OR *
+inoremap <esc>OQ /
+inoremap <esc>Ol +
+inoremap <esc>OS -
 
 " insert newline in normal mode
-nnoremap <C-J> i<CR><Esc>
+nnoremap <c-j> i<CR><Esc>
 
 " execute default macro in normal mode for space
-nnoremap <Space> @q
+nnoremap <space> @q
+
+" switch to previous buffer
+nnoremap <silent> <tab><tab> :b#<cr>
 
 " }}}
 " FileTypes {{{
@@ -200,14 +256,14 @@ augroup filetype_go
         \| silent! call GoFmtKeepFolds()
 
     au FileType go
-        \ setlocal noexpandtab
+        \  setlocal noexpandtab
         \| setlocal foldmethod=syntax
         \| setlocal foldlevel=0
         \| setlocal foldnestmax=1
         \| nnoremap <buffer> <silent> K :GoDoc<CR>
         \| nnoremap <buffer> <silent> gd :GoDef<CR>
         \| nnoremap <buffer> <silent> gr :GoReferrers<cr>
-        \| nnoremap <buffer> <F6> :GoRename<CR>
+        \| nnoremap <buffer> <F4> :GoRename<CR>
 augroup END
 
 function! GoFmtKeepFolds()
@@ -216,9 +272,31 @@ function! GoFmtKeepFolds()
     loadview
 endfunction
 "    }}}
+"    java {{{
+augroup filetype_java
+    au!
+
+    autocmd BufEnter *.java
+        \  call ncm2#enable_for_buffer()
+augroup END
+"    }}}
+"    markdown {{{
+augroup filetype_md
+    au!
+
+    au BufWritePre *.md
+        \  silent! call RemoveTrailingSpaces()
+
+    au FileType markdown
+        \  setlocal colorcolumn=80
+augroup END
+"    }}}
 "    vim {{{
 augroup filetype_vim
     au!
+
+    autocmd BufEnter *.vim
+        \  call ncm2#enable_for_buffer()
 
     au BufWritePre *.vim
         \ silent! call RemoveTrailingSpaces()
